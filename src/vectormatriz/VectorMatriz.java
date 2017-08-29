@@ -30,17 +30,11 @@ public class VectorMatriz {
             case 1:
                 Vector p =new Vector();
                 p.vector();
-                System.out.println(" En que orden desea el vector ");
-                System.out.println(" 1.Ascendente");
-                System.out.println(" 2.Descendente");
-                System.out.print(" Digite Opcion: ");
-                Scanner opc3 = new Scanner(System.in);
-                c= opc3.nextInt();
-                switch(c){
-                    case 1: 
-                       p.ascendente();
-                    break;
-                }
+                
+            break;
+            case 2:
+                Matriz m=new Matriz();
+                m.matriz();
             break;
         }
     }

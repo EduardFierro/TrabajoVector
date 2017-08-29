@@ -12,37 +12,62 @@ import java.util.Scanner;
  * @author Pavilion 15
  */
 public class Vector {
-    private int b, aux;
-    int []vect;
-    public void vector(){
-        
+
+    private int b,c,aux;
+    int[] vect;
+
+    public void vector() {
+
         Scanner opc2 = new Scanner(System.in);
         System.out.print(" Digite el tamaño del vector: ");
         Scanner opc1 = new Scanner(System.in);
-        b= opc1.nextInt();
+        b = opc1.nextInt();
         vect = new int[b];
-        for(int i=0;i<b;i++){
+        for (int i=0; i<b;i++) {
             System.out.print(" Digite numero: ");
             vect[i] = opc2.nextInt();
+         
+        }
 
-        }
-    }
-    public int ascendente(){
-        int i,j;
-        for(i=0;i<b;i++){
-            for(j=0;j<b;j++){
-                if(vect[j]>vect[j+1]){
-                    aux=vect[j];
-                    vect[j]=vect[j+1];
-                    vect[j+1]= aux;
+        System.out.println(" En que orden desea el vector ");
+        System.out.println(" 1.Ascendente");
+        System.out.println(" 2.Descendente");
+        System.out.print(" Digite Opcion: ");
+        Scanner opc3 = new Scanner(System.in);
+        c = opc3.nextInt();
+        switch (c) {
+            case 1:
+                for (int i = 0; i < b-1; i++) {
+                    for (int j = 0; j < b-1; j++) {
+                        if (vect[j]>vect[j+1]) {
+                            aux = vect[j+1];
+                            vect[j+1] = vect[j];
+                            vect[j] = aux;
+                        }
+                    }
                 }
-            }
-        }    
-        for(i=0;i<b;i++){
-            System.out.println(vect[i]);
+                for (int i = 0; i < b; i++) {
+                    System.out.print(vect[i]);
+                    System.out.print(" ");
+                }
+            break;
+            case 2:
+                for (int i = 0; i < b-1; i++) {
+                    for (int j = 0; j < b-1; j++) {
+                        if (vect[j]>vect[j+1]) {
+                            aux = vect[j+1];
+                            vect[j+1] = vect[j];
+                            vect[j] = aux;
+                        }
+                    }
+                }
+                for (int i=b-1; i>=0; i--) {
+                    System.out.print(vect[i]);
+                    System.out.print(" ");
+                }
+            break;
         }
-    
-        return 0;
+
     }
 
 }
